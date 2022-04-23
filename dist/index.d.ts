@@ -1,8 +1,8 @@
-import { Request, InitPaymentRequest, InitPaymentResponse, AddCustomerRequest, AddCustomerResponse, GetCustomerRequest, GetCustomerResponse, RemoveCustomerRequest, RemoveCustomerResponse, GetCardListRequest, GetCardListResponse, ChargeRequest, ChargeResponse, ConfirmPaymentRequest, ConfirmPaymentResponse, CancelPaymentRequest, CancelPaymentResponse, PaymentStateRequest, PaymentStateResponse, ResendPaymentRequest, ResendPaymentResponse } from './types';
+import { AddCustomerRequest, AddCustomerResponse, CancelPaymentRequest, CancelPaymentResponse, ChargeRequest, ChargeResponse, ConfirmPaymentRequest, ConfirmPaymentResponse, GetCardListRequest, GetCardListResponse, GetCustomerRequest, GetCustomerResponse, InitPaymentRequest, InitPaymentResponse, PaymentStateRequest, PaymentStateResponse, RemoveCustomerRequest, RemoveCustomerResponse, Request, ResendPaymentRequest, ResendPaymentResponse } from './types/index';
 /**
  * Tinkoff API connector
  */
-export default class TinkoffAPI {
+export declare class TinkoffApi {
     /**
      * Tinkoff API endpoint
      */
@@ -105,5 +105,5 @@ export default class TinkoffAPI {
      *
      * @param params - params for check
      */
-    private checkInitPayment;
+    private static checkInitPayment;
 }

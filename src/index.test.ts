@@ -1,8 +1,8 @@
-import TinkoffAPI from '../dist';
+import { TinkoffApi } from '../dist';
 
 
 describe('TokenGenerationTest', () => {
-    const api = new TinkoffAPI('TerminalExample', '123456');
+    const api = new TinkoffApi('TerminalExample', '123456');
 
     test('should return valid sign', () => {
         expect(api.generateToken({
@@ -28,7 +28,7 @@ describe('TokenGenerationTest', () => {
 });
 
 describe('TokenNotifyTest', () => {
-    const api = new TinkoffAPI('TerminalExample', 'Dfsfh56dgKl');
+    const api = new TinkoffApi('TerminalExample', 'Dfsfh56dgKl');
 
     test('should return valid token signature', () => {
         expect(api.generateToken({

@@ -2,13 +2,13 @@
  * Available languages
  */
 export enum Language {
-  /**
-   * English
-   */
-  EN='en',
+    /**
+     * English
+     */
+    EN = 'en',
 
-  /**
-   * Russian
-   */
-  RU='ru'
+    /**
+     * Russian
+     */
+    RU = 'ru'
 }

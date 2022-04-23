@@ -2,13 +2,13 @@
  * Pay type
  */
 export enum PayType {
-  /**
-   * One-stage pay
-   */
-  O='O',
+    /**
+     * One-stage pay
+     */
+    O = 'O',
 
-  /**
-   * Two-stage pay
-   */
-  T='T'
+    /**
+     * Two-stage pay
+     */
+    T = 'T'
 }

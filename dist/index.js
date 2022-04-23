@@ -44,6 +44,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.TinkoffApi = void 0;
     const debug_1 = __importDefault(require("debug"));
     const crypto = __importStar(require("crypto"));
     const _ = __importStar(require("lodash"));
@@ -51,7 +52,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     /**
      * Tinkoff API connector
      */
-    class TinkoffAPI {
+    class TinkoffApi {
         /**
          * Constructor
          *
@@ -75,9 +76,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         initPayment(params) {
             return __awaiter(this, void 0, void 0, function* () {
                 try {
-                    this.checkInitPayment(params);
-                    const response = (yield this.requestMethod('Init', params));
-                    return response;
+                    TinkoffApi.checkInitPayment(params);
+                    return (yield this.requestMethod('Init', params));
                 }
                 catch (error) {
                     (0, debug_1.default)(`${error}`);
@@ -91,8 +91,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
          */
         addCustomer(params) {
             return __awaiter(this, void 0, void 0, function* () {
-                const response = (yield this.requestMethod('AddCustomer', params));
-                return response;
+                return (yield this.requestMethod('AddCustomer', params));
             });
         }
         /**
@@ -102,8 +101,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
          */
         getCustomer(params) {
             return __awaiter(this, void 0, void 0, function* () {
-                const response = (yield this.requestMethod('GetCustomer', params));
-                return response;
+                return (yield this.requestMethod('GetCustomer', params));
             });
         }
         /**
@@ -113,8 +111,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
          */
         removeCustomer(params) {
             return __awaiter(this, void 0, void 0, function* () {
-                const response = (yield this.requestMethod('RemoveCustomer', params));
-                return response;
+                return (yield this.requestMethod('RemoveCustomer', params));
             });
         }
         /**
@@ -124,8 +121,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
          */
         getCardList(params) {
             return __awaiter(this, void 0, void 0, function* () {
-                const response = (yield this.requestMethod('GetCardList', params));
-                return response;
+                return (yield this.requestMethod('GetCardList', params));
             });
         }
         /**
@@ -135,8 +131,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
          */
         charge(params) {
             return __awaiter(this, void 0, void 0, function* () {
-                const response = (yield this.requestMethod('Charge', params));
-                return response;
+                return (yield this.requestMethod('Charge', params));
             });
         }
         /**
@@ -146,8 +141,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
          */
         confirmPayment(params) {
             return __awaiter(this, void 0, void 0, function* () {
-                const response = (yield this.requestMethod('Confirm', params));
-                return response;
+                return (yield this.requestMethod('Confirm', params));
             });
         }
         /**
@@ -157,8 +151,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
          */
         cancelPayment(params) {
             return __awaiter(this, void 0, void 0, function* () {
-                const response = (yield this.requestMethod('Cancel', params));
-                return response;
+                return (yield this.requestMethod('Cancel', params));
             });
         }
         /**
@@ -168,8 +161,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
          */
         paymentState(params) {
             return __awaiter(this, void 0, void 0, function* () {
-                const response = (yield this.requestMethod('GetState', params));
-                return response;
+                return (yield this.requestMethod('GetState', params));
             });
         }
         /**
@@ -179,8 +171,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
          */
         resendPayment(params) {
             return __awaiter(this, void 0, void 0, function* () {
-                const response = (yield this.requestMethod('Resend', params));
-                return response;
+                return (yield this.requestMethod('Resend', params));
             });
         }
         /**
@@ -240,11 +231,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
          *
          * @param params - params for check
          */
-        checkInitPayment(params) {
+        static checkInitPayment(params) {
             if (!params.Amount) {
                 throw new Error('Not specified `Amount` parameter: order amount as number in kopecks');
             }
         }
     }
-    exports.default = TinkoffAPI;
+    exports.TinkoffApi = TinkoffApi;
 });

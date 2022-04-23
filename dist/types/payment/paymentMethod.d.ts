@@ -2,38 +2,38 @@
  * Indicator of the method of payment
  */
 export enum PaymentMethod {
-  /**
-   * Full payment
-   */
-  FULL_PAYMENT='full_payment',
+    /**
+     * Full payment
+     */
+    FULL_PAYMENT = 'full_payment',
 
-  /**
-   * Prepayment 100%
-   */
-  FULL_PREPAYMENT='full_prepayment',
+    /**
+     * Prepayment 100%
+     */
+    FULL_PREPAYMENT = 'full_prepayment',
 
-  /**
-   * Prepayment
-   */
-  PREPAYMENT='prepayment',
+    /**
+     * Prepayment
+     */
+    PREPAYMENT = 'prepayment',
 
-  /**
-   * Advance
-   */
-  ADVANCE='advance',
+    /**
+     * Advance
+     */
+    ADVANCE = 'advance',
 
-  /**
-   * Partial payment or credit
-   */
-  PARTIAL_PAYMENT='partial_payment',
+    /**
+     * Partial payment or credit
+     */
+    PARTIAL_PAYMENT = 'partial_payment',
 
-  /**
-   * Credit transfer
-   */
-  CREDIT='credit',
+    /**
+     * Credit transfer
+     */
+    CREDIT = 'credit',
 
-  /**
-   * Loan payment
-   */
-  CREDIT_PAYMENT='credit_payment'
+    /**
+     * Loan payment
+     */
+    CREDIT_PAYMENT = 'credit_payment'
 }
