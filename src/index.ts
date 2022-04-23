@@ -4,35 +4,35 @@ import * as _ from 'lodash';
 import axios from 'axios';
 
 import {
-  AddCustomerRequest,
-  AddCustomerResponse,
-  CancelPaymentRequest,
-  CancelPaymentResponse,
-  ChargeRequest,
-  ChargeResponse,
-  ConfirmPaymentRequest,
-  ConfirmPaymentResponse,
-  GetCardListRequest,
-  GetCardListResponse,
-  GetCustomerRequest,
-  GetCustomerResponse,
-  InitPaymentRequest,
-  InitPaymentResponse,
-  PaymentStateRequest,
-  PaymentStateResponse,
-  RemoveCustomerRequest,
-  RemoveCustomerResponse,
-  Request,
-  ResendPaymentRequest,
-  ResendPaymentResponse,
-  Response,
+    AddCustomerRequest,
+    AddCustomerResponse,
+    CancelPaymentRequest,
+    CancelPaymentResponse,
+    ChargeRequest,
+    ChargeResponse,
+    ConfirmPaymentRequest,
+    ConfirmPaymentResponse,
+    GetCardListRequest,
+    GetCardListResponse,
+    GetCustomerRequest,
+    GetCustomerResponse,
+    InitPaymentRequest,
+    InitPaymentResponse,
+    PaymentStateRequest,
+    PaymentStateResponse,
+    RemoveCustomerRequest,
+    RemoveCustomerResponse,
+    Request,
+    ResendPaymentRequest,
+    ResendPaymentResponse,
+    Response,
 } from './types/index';
 
 
 /**
  * Tinkoff API connector
  */
-export default class TinkoffAPI {
+export class TinkoffApi {
     /**
      * Tinkoff API endpoint
      */
@@ -76,9 +76,9 @@ export default class TinkoffAPI {
      *
      * @param params - params for Init method except TerminalKey and Token
      */
-    public async initPayment(params: InitPaymentRequest): Promise<InitPaymentResponse | undefined> {
+    async initPayment(params: InitPaymentRequest): Promise<InitPaymentResponse | undefined> {
         try {
-            TinkoffAPI.checkInitPayment(params);
+            TinkoffApi.checkInitPayment(params);
 
             return (await this.requestMethod('Init', params)) as InitPaymentResponse;
         } catch (error) {
@@ -91,7 +91,7 @@ export default class TinkoffAPI {
      *
      * @param params - params for add customer method
      */
-    public async addCustomer(params: AddCustomerRequest): Promise<AddCustomerResponse> {
+    async addCustomer(params: AddCustomerRequest): Promise<AddCustomerResponse> {
         return (await this.requestMethod('AddCustomer', params)) as AddCustomerResponse;
     }
 
@@ -100,7 +100,7 @@ export default class TinkoffAPI {
      *
      * @param params - params for get customer request
      */
-    public async getCustomer(params: GetCustomerRequest): Promise<GetCustomerResponse> {
+    async getCustomer(params: GetCustomerRequest): Promise<GetCustomerResponse> {
         return (await this.requestMethod('GetCustomer', params)) as GetCustomerResponse;
     }
 
@@ -109,7 +109,7 @@ export default class TinkoffAPI {
      *
      * @param params - params for remove customer request
      */
-    public async removeCustomer(params: RemoveCustomerRequest): Promise<RemoveCustomerResponse> {
+    async removeCustomer(params: RemoveCustomerRequest): Promise<RemoveCustomerResponse> {
         return (await this.requestMethod('RemoveCustomer', params)) as RemoveCustomerResponse;
     }
 
@@ -118,7 +118,7 @@ export default class TinkoffAPI {
      *
      * @param params - params for get customer's cards request
      */
-    public async getCardList(params: GetCardListRequest): Promise<GetCardListResponse> {
+    async getCardList(params: GetCardListRequest): Promise<GetCardListResponse> {
         return (await this.requestMethod('GetCardList', params)) as GetCardListResponse;
     }
 
@@ -127,7 +127,7 @@ export default class TinkoffAPI {
      *
      * @param params - params for charge request
      */
-    public async charge(params: ChargeRequest): Promise<ChargeResponse> {
+    async charge(params: ChargeRequest): Promise<ChargeResponse> {
         return (await this.requestMethod('Charge', params)) as ChargeResponse;
     }
 
@@ -136,7 +136,7 @@ export default class TinkoffAPI {
      *
      * @param params - params for Confirm method except TerminalKey and Token
      */
-    public async confirmPayment(params: ConfirmPaymentRequest): Promise<ConfirmPaymentResponse> {
+    async confirmPayment(params: ConfirmPaymentRequest): Promise<ConfirmPaymentResponse> {
         return (await this.requestMethod('Confirm', params)) as ConfirmPaymentResponse;
     }
 
@@ -145,7 +145,7 @@ export default class TinkoffAPI {
      *
      * @param params - params for Cancel method except TerminalKey and Token
      */
-    public async cancelPayment(params: CancelPaymentRequest): Promise<CancelPaymentResponse> {
+    async cancelPayment(params: CancelPaymentRequest): Promise<CancelPaymentResponse> {
         return (await this.requestMethod('Cancel', params)) as CancelPaymentResponse;
     }
 
@@ -154,7 +154,7 @@ export default class TinkoffAPI {
      *
      * @param params - params for GetState method except TerminalKey and Token
      */
-    public async paymentState(params: PaymentStateRequest): Promise<PaymentStateResponse> {
+    async paymentState(params: PaymentStateRequest): Promise<PaymentStateResponse> {
         return (await this.requestMethod('GetState', params)) as PaymentStateResponse;
     }
 
@@ -163,7 +163,7 @@ export default class TinkoffAPI {
      *
      * @param params - params for Resend method except TerminalKey and Token
      */
-    public async resendPayment(params: ResendPaymentRequest): Promise<ResendPaymentResponse> {
+    async resendPayment(params: ResendPaymentRequest): Promise<ResendPaymentResponse> {
         return (await this.requestMethod('Resend', params)) as ResendPaymentResponse;
     }
 
@@ -173,7 +173,7 @@ export default class TinkoffAPI {
      *
      * @param params - method parameters (key-value) excluding Receipt and DATA
      */
-    public generateToken(params: Request): string {
+    generateToken(params: Request): string {
         let tokenParams: Request & { Password?: string } = {
             ...params,
         };
@@ -192,6 +192,7 @@ export default class TinkoffAPI {
             ...tokenParams,
             Password: this.secretKey,
         };
+
         const pairs = _.toPairs(tokenParams);
         const sortedPairs = _.sortBy(pairs, pair => pair[0]);
         const concatenatedValues = _.reduce(

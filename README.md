@@ -3,16 +3,18 @@ Simple SDK for Tinkoff API.
 
 ## Example usage
 ```nodejs
-const TinkoffAPI = require('./api');
-require('dotenv').config();
-const bankApi = new TinkoffAPI(process.env.TINKOFF_TERMINAL_KEY, process.env.TINKOFF_SECRET_KEY);
+import { TinkoffCheckout } from '@exode/tinkoff.checkout';
 
+const checkout = new TinkoffCheckout(
+    process.env.TINKOFF_TERMINAL_KEY,
+    process.env.TINKOFF_SECRET_KEY
+);
 
-bankApi.init({
+const payment = await checkout.initPayment({
   Amount: '10000',
   OrderId: '123',
   DATA: {
-    Email: 'user@ya.ru',
+    Email: 'user@exode.ru',
     Phone: '+71234567890'
   },
   Receipt: {
@@ -30,24 +32,27 @@ bankApi.init({
       }
     ]
   }
-}).then(res => {
-  console.log(res);
-}).catch(err => {
-  console.log(err)
-});
+})
 
 ```
 
-### Response
+### Response (payment)
 ```
-{ Success: true,
-  ErrorCode: '0',
-  TerminalKey: '...',
-  Status: 'NEW',
-  PaymentId: '...',
-  OrderId: '123',
-  Amount: 10000,
-  PaymentURL: 'https://securepay.tinkoff.ru/new/...' }
+{ 
+    Success: true,
+    ErrorCode: '0',
+    TerminalKey: '...',
+    Status: 'NEW',
+    PaymentId: '...',
+    OrderId: '123',
+    Amount: 10000,
+    PaymentURL: 'https://securepay.tinkoff.ru/new/...' 
+}
+```
+
+### Nestjs module
+```
+Coming soon...
 ```
 
 ## Run tests
