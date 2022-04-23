@@ -1,6 +1,5 @@
 module.exports = {
-  extends: ['codex'],
-  env: {
-    jest: true
-  }
+    env: {
+        jest: true,
+    },
 };
