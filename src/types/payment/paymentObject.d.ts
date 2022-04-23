@@ -2,68 +2,68 @@
  * The attribute of the subject of payment
  */
 export enum PaymentObject {
-  /**
-   * Product
-   */
-  COMMODITY='commodity',
+    /**
+     * Product
+     */
+    COMMODITY = 'commodity',
 
-  /**
-   * Excisable product
-   */
-  EXCISE='excise',
+    /**
+     * Excisable product
+     */
+    EXCISE = 'excise',
 
-  /**
-   * Job
-   */
-  JOB='job',
+    /**
+     * Job
+     */
+    JOB = 'job',
 
-  /**
-   * Service
-   */
-  SERVICE='service',
+    /**
+     * Service
+     */
+    SERVICE = 'service',
 
-  /**
-   * Gambling bet
-   */
-  GAMBLING_BET='gambling_bet',
+    /**
+     * Gambling bet
+     */
+    GAMBLING_BET = 'gambling_bet',
 
-  /**
-   * Gambling prize
-   */
-  GAMBLING_PRIZE='gambling_prize',
+    /**
+     * Gambling prize
+     */
+    GAMBLING_PRIZE = 'gambling_prize',
 
-  /**
-   * Lottery ticket
-   */
-  LOTTERY='lottery',
+    /**
+     * Lottery ticket
+     */
+    LOTTERY = 'lottery',
 
-  /**
-   * Lottery prize
-   */
-  LOTTERY_PRIZE='lottery_prize',
+    /**
+     * Lottery prize
+     */
+    LOTTERY_PRIZE = 'lottery_prize',
 
-  /**
-   * Provision of the results of intellectual activity
-   */
-  INTELLECTUAL_ACTIVITY='intellectual_activity',
+    /**
+     * Provision of the results of intellectual activity
+     */
+    INTELLECTUAL_ACTIVITY = 'intellectual_activity',
 
-  /**
-   * Payment
-   */
-  PAYMENT='payment',
+    /**
+     * Payment
+     */
+    PAYMENT = 'payment',
 
-  /**
-   * Agent commission
-   */
-  AGENT_COMMISSION='agent_commission',
+    /**
+     * Agent commission
+     */
+    AGENT_COMMISSION = 'agent_commission',
 
-  /**
-   * Compound subject of payment
-   */
-  COMPOSITE='composite',
+    /**
+     * Compound subject of payment
+     */
+    COMPOSITE = 'composite',
 
-  /**
-   * Another object of payment
-   */
-  ANOTHER='another'
+    /**
+     * Another object of payment
+     */
+    ANOTHER = 'another'
 }

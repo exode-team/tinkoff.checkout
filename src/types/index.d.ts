@@ -12,7 +12,7 @@ import { AgentData } from 'agent/agentData';
 import { AgentSign } from 'agent/agentSign';
 import { PaymentObject } from 'payment/paymentObject';
 import { PaymentMethod } from 'payment/paymentMethod';
-import { Card, CardType, CardStatus } from 'utilities/card';
+import { Card, CardStatus, CardType } from 'utilities/card';
 import { Item } from 'utilities/item';
 import { Language } from 'utilities/language';
 import { PayType } from 'utilities/payType';
@@ -21,124 +21,125 @@ import { SupplierInfo } from 'utilities/supplierInfo';
 import { Taxation } from 'utilities/taxation';
 import { Tax } from 'utilities/tax';
 
+
 /**
  * Types of request
  */
 export type Request = InitPaymentRequest |
-  AddCustomerRequest |
-  GetCustomerRequest |
-  RemoveCustomerRequest |
-  GetCardListRequest |
-  ChargeRequest |
-  ConfirmPaymentRequest |
-  CancelPaymentRequest |
-  PaymentStateRequest |
-  ResendPaymentRequest;
+    AddCustomerRequest |
+    GetCustomerRequest |
+    RemoveCustomerRequest |
+    GetCardListRequest |
+    ChargeRequest |
+    ConfirmPaymentRequest |
+    CancelPaymentRequest |
+    PaymentStateRequest |
+    ResendPaymentRequest;
 
 /**
  * Types of response
  */
 export type Response = InitPaymentResponse |
-  AddCustomerResponse |
-  GetCustomerResponse |
-  RemoveCustomerResponse|
-  GetCardListResponse |
-  ChargeResponse |
-  ConfirmPaymentResponse |
-  CancelPaymentResponse |
-  PaymentStateResponse |
-  ResendPaymentResponse;
+    AddCustomerResponse |
+    GetCustomerResponse |
+    RemoveCustomerResponse |
+    GetCardListResponse |
+    ChargeResponse |
+    ConfirmPaymentResponse |
+    CancelPaymentResponse |
+    PaymentStateResponse |
+    ResendPaymentResponse;
 
 /**
  * Export request and response types
  */
 export {
-  InitPaymentRequest,
-  InitPaymentResponse,
-  AddCustomerRequest,
-  AddCustomerResponse,
-  GetCustomerRequest,
-  GetCustomerResponse,
-  RemoveCustomerRequest,
-  RemoveCustomerResponse,
-  GetCardListRequest,
-  GetCardListResponse,
-  ChargeRequest,
-  ChargeResponse,
-  ConfirmPaymentRequest,
-  ConfirmPaymentResponse,
-  CancelPaymentRequest,
-  CancelPaymentResponse,
-  PaymentStateRequest,
-  PaymentStateResponse,
-  ResendPaymentRequest,
-  ResendPaymentResponse
+    InitPaymentRequest,
+    InitPaymentResponse,
+    AddCustomerRequest,
+    AddCustomerResponse,
+    GetCustomerRequest,
+    GetCustomerResponse,
+    RemoveCustomerRequest,
+    RemoveCustomerResponse,
+    GetCardListRequest,
+    GetCardListResponse,
+    ChargeRequest,
+    ChargeResponse,
+    ConfirmPaymentRequest,
+    ConfirmPaymentResponse,
+    CancelPaymentRequest,
+    CancelPaymentResponse,
+    PaymentStateRequest,
+    PaymentStateResponse,
+    ResendPaymentRequest,
+    ResendPaymentResponse,
 };
 
 /**
  * Export agent types
  */
 export {
-  AgentData,
-  AgentSign
+    AgentData,
+    AgentSign,
 };
 
 /**
  * Export payment types
  */
 export {
-  PaymentMethod,
-  PaymentObject
+    PaymentMethod,
+    PaymentObject,
 };
 
 /**
  * Export card types
  */
 export {
-  Card,
-  CardType,
-  CardStatus
+    Card,
+    CardType,
+    CardStatus,
 };
 
 /**
  * Export item types
  */
 export {
-  Item
+    Item,
 };
 
 /**
  * Export available languages
  */
 export {
-  Language
+    Language,
 };
 
 /**
  * Export pay types
  */
 export {
-  PayType
+    PayType,
 };
 
 /**
  * Export receipt types
  */
 export {
-  Receipt
+    Receipt,
 };
 
 /**
  * Export supplier info type
  */
 export {
-  SupplierInfo
+    SupplierInfo,
 };
 
 /**
  * Export tax types
  */
 export {
-  Tax,
-  Taxation
+    Tax,
+    Taxation,
 };
