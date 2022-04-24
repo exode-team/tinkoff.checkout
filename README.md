@@ -1,5 +1,5 @@
 # Tinkoff API SDK
-Simple SDK for Tinkoff API.
+Simple SDK for Tinkoff API (NodeJS + Typescript + Jest).
 
 ## Example usage
 ```nodejs
