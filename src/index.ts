@@ -30,9 +30,9 @@ import {
 
 
 /**
- * Tinkoff API connector
+ * Tinkoff checkout API connector
  */
-export class TinkoffApi {
+export class TinkoffCheckout {
     /**
      * Tinkoff API endpoint
      */
@@ -78,7 +78,7 @@ export class TinkoffApi {
      */
     async initPayment(params: InitPaymentRequest): Promise<InitPaymentResponse | undefined> {
         try {
-            TinkoffApi.checkInitPayment(params);
+            TinkoffCheckout.checkInitPayment(params);
 
             return (await this.requestMethod('Init', params)) as InitPaymentResponse;
         } catch (error) {

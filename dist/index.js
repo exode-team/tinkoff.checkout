@@ -44,15 +44,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.TinkoffApi = void 0;
+    exports.TinkoffCheckout = void 0;
     const debug_1 = __importDefault(require("debug"));
     const crypto = __importStar(require("crypto"));
     const _ = __importStar(require("lodash"));
     const axios_1 = __importDefault(require("axios"));
     /**
-     * Tinkoff API connector
+     * Tinkoff checkout API connector
      */
-    class TinkoffApi {
+    class TinkoffCheckout {
         /**
          * Constructor
          *
@@ -76,7 +76,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         initPayment(params) {
             return __awaiter(this, void 0, void 0, function* () {
                 try {
-                    TinkoffApi.checkInitPayment(params);
+                    TinkoffCheckout.checkInitPayment(params);
                     return (yield this.requestMethod('Init', params));
                 }
                 catch (error) {
@@ -237,5 +237,5 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
             }
         }
     }
-    exports.TinkoffApi = TinkoffApi;
+    exports.TinkoffCheckout = TinkoffCheckout;
 });

@@ -1,8 +1,8 @@
 import { AddCustomerRequest, AddCustomerResponse, CancelPaymentRequest, CancelPaymentResponse, ChargeRequest, ChargeResponse, ConfirmPaymentRequest, ConfirmPaymentResponse, GetCardListRequest, GetCardListResponse, GetCustomerRequest, GetCustomerResponse, InitPaymentRequest, InitPaymentResponse, PaymentStateRequest, PaymentStateResponse, RemoveCustomerRequest, RemoveCustomerResponse, Request, ResendPaymentRequest, ResendPaymentResponse } from './types/index';
 /**
- * Tinkoff API connector
+ * Tinkoff checkout API connector
  */
-export declare class TinkoffApi {
+export declare class TinkoffCheckout {
     /**
      * Tinkoff API endpoint
      */

@@ -1,8 +1,8 @@
-import { TinkoffApi } from '../dist';
+import { TinkoffCheckout } from '../dist';
 
 
 describe('TokenGenerationTest', () => {
-    const api = new TinkoffApi('TerminalExample', '123456');
+    const api = new TinkoffCheckout('TerminalExample', '123456');
 
     test('should return valid sign', () => {
         expect(api.generateToken({
@@ -28,7 +28,7 @@ describe('TokenGenerationTest', () => {
 });
 
 describe('TokenNotifyTest', () => {
-    const api = new TinkoffApi('TerminalExample', 'Dfsfh56dgKl');
+    const api = new TinkoffCheckout('TerminalExample', 'Dfsfh56dgKl');
 
     test('should return valid token signature', () => {
         expect(api.generateToken({
@@ -40,16 +40,3 @@ describe('TokenNotifyTest', () => {
         })).toEqual('0b4533c60a4e18cf2a79ffcfab29dc05e441c60fba5d338309d14075c66bb4ac');
     });
 });
-
-/*
- * describe('Send request to Tinkoff API', () => {
- *   const api = new TinkoffAPI(process.env.TINKOFF_TERMINAL_KEY as string,
- *     process.env.TINKOFF_SECRET_KEY as string);
- *
- *   test('should return response', () => {
- *     expect(api.initPayment({
- *
- *     }));
- *   });
- * });
- */
