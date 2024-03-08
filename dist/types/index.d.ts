@@ -2,6 +2,7 @@ import { InitPaymentRequest, InitPaymentResponse } from 'requests/initPayment';
 import { AddCustomerRequest, AddCustomerResponse } from 'requests/addCustomer';
 import { GetCustomerRequest, GetCustomerResponse } from 'requests/getCustomer';
 import { RemoveCustomerRequest, RemoveCustomerResponse } from 'requests/removeCustomer';
+import { GetQrRequest, GetQrResponse } from 'requests/getQr';
 import { GetCardListRequest, GetCardListResponse } from 'requests/getCardList';
 import { ChargeRequest, ChargeResponse } from 'requests/charge';
 import { ConfirmPaymentRequest, ConfirmPaymentResponse } from 'requests/confirmPayment';
@@ -29,6 +30,7 @@ export type Request = InitPaymentRequest |
     AddCustomerRequest |
     GetCustomerRequest |
     RemoveCustomerRequest |
+    GetQrRequest |
     GetCardListRequest |
     ChargeRequest |
     ConfirmPaymentRequest |
@@ -43,6 +45,7 @@ export type Response = InitPaymentResponse |
     AddCustomerResponse |
     GetCustomerResponse |
     RemoveCustomerResponse |
+    GetQrResponse |
     GetCardListResponse |
     ChargeResponse |
     ConfirmPaymentResponse |
@@ -62,6 +65,8 @@ export {
     GetCustomerResponse,
     RemoveCustomerRequest,
     RemoveCustomerResponse,
+    GetQrRequest,
+    GetQrResponse,
     GetCardListRequest,
     GetCardListResponse,
     ChargeRequest,

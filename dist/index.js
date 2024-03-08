@@ -175,6 +175,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
             });
         }
         /**
+         * Get payment QR
+         *
+         * @param params - params for Init method except TerminalKey and Token
+         */
+        getQr(params) {
+            return __awaiter(this, void 0, void 0, function* () {
+                try {
+                    return (yield this.requestMethod('GetQr', params));
+                }
+                catch (error) {
+                    (0, debug_1.default)(`${error}`);
+                }
+            });
+        }
+        /**
          * Generate signature token
          * Docs: https://oplata.tinkoff.ru/develop/api/request-sign/
          *

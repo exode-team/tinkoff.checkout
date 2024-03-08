@@ -1,4 +1,4 @@
-import { AddCustomerRequest, AddCustomerResponse, CancelPaymentRequest, CancelPaymentResponse, ChargeRequest, ChargeResponse, ConfirmPaymentRequest, ConfirmPaymentResponse, GetCardListRequest, GetCardListResponse, GetCustomerRequest, GetCustomerResponse, InitPaymentRequest, InitPaymentResponse, PaymentStateRequest, PaymentStateResponse, RemoveCustomerRequest, RemoveCustomerResponse, Request, ResendPaymentRequest, ResendPaymentResponse } from './types/index';
+import { AddCustomerRequest, AddCustomerResponse, CancelPaymentRequest, CancelPaymentResponse, ChargeRequest, ChargeResponse, ConfirmPaymentRequest, ConfirmPaymentResponse, GetCardListRequest, GetCardListResponse, GetCustomerRequest, GetCustomerResponse, GetQrRequest, GetQrResponse, InitPaymentRequest, InitPaymentResponse, PaymentStateRequest, PaymentStateResponse, RemoveCustomerRequest, RemoveCustomerResponse, Request, ResendPaymentRequest, ResendPaymentResponse } from './types/index';
 /**
  * Tinkoff checkout API connector
  */
@@ -86,6 +86,12 @@ export declare class TinkoffCheckout {
      * @param params - params for Resend method except TerminalKey and Token
      */
     resendPayment(params: ResendPaymentRequest): Promise<ResendPaymentResponse>;
+    /**
+     * Get payment QR
+     *
+     * @param params - params for Init method except TerminalKey and Token
+     */
+    getQr(params: GetQrRequest): Promise<GetQrResponse | undefined>;
     /**
      * Generate signature token
      * Docs: https://oplata.tinkoff.ru/develop/api/request-sign/
