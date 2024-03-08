@@ -16,6 +16,8 @@ import {
     GetCardListResponse,
     GetCustomerRequest,
     GetCustomerResponse,
+    GetQrRequest,
+    GetQrResponse,
     InitPaymentRequest,
     InitPaymentResponse,
     PaymentStateRequest,
@@ -165,6 +167,19 @@ export class TinkoffCheckout {
      */
     async resendPayment(params: ResendPaymentRequest): Promise<ResendPaymentResponse> {
         return (await this.requestMethod('Resend', params)) as ResendPaymentResponse;
+    }
+
+    /**
+     * Get payment QR
+     *
+     * @param params - params for Init method except TerminalKey and Token
+     */
+    async getQr(params: GetQrRequest): Promise<GetQrResponse | undefined> {
+        try {
+            return (await this.requestMethod('GetQr', params)) as GetQrResponse;
+        } catch (error) {
+            debug(`${error}`);
+        }
     }
 
     /**
